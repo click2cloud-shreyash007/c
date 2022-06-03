@@ -1,3 +1,21 @@
 {%extends 'shop/base.html' %} {%block content%}
-<p>Django form to implement crud (item list)</p>
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Item Id</td>
+            <td>Item Name</td>
+            <td>Item Price</td>
+        </tr>
+    </thead>
+
+    <body>
+        {%for item in item_list %}
+        <tr>
+            <td>{{item.item_id}}</td>
+            <td>{{item.item_name}}</td>
+            <td>{{item.item_price}}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
 {%endblock%}
