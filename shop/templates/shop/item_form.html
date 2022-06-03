@@ -1,0 +1,6 @@
+{%extends 'shop/base.html' %} {%load crispy_forms_tags %} {%block content%}
+<form action="" method="post">
+    <!-- updated -->
+    {%csrf_token%} {{form|crispy}}
+</form>
+{%endblock%}
