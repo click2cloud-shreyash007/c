@@ -5,6 +5,12 @@
             <td>Item Id</td>
             <td>Item Name</td>
             <td>Item Price</td>
+            <td>
+
+                <a href="{% url 'item_insert' %}" class="btn btn-outline-success"></a>
+                <i class="fa-solid fa-circle-plus"></i> Add Item
+                </a>
+            </td>
         </tr>
     </thead>
 
@@ -14,6 +20,17 @@
             <td>{{item.item_id}}</td>
             <td>{{item.item_name}}</td>
             <td>{{item.item_price}}</td>
+            <td>
+                <a href="{% url 'item_update' item.id %}" class="btn text-secondary px-0">
+                    <i class="far fa-edit fa-lg"></i>
+                </a>
+                <form action="{% url 'item_delete' item.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </body>
