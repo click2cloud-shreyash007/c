@@ -4,7 +4,7 @@ from django.db import models
 
 class item(models.Model):
     item_id = models.IntegerField()
-    # item_id = models.CharField(max_length=3)
+
     item_name = models.CharField(max_length=100)
     
     item_price = models.CharField(max_length=10)
